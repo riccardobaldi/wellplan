@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Activities Routines</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-left (click)="addRoutine()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding id="page2">
+
+  <div id="activityCheckList-markdown1" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      <strong>
+        Routines List
+      </strong>
+      (with default &amp; customizable), date, priorities, statistics, several entries per day of the same item are possible. Possibility of inserting up to 5 (?!) pictures per item. Possibility of inserting it into the Vision Board. Max of 200 Items. Link to Menu Training Explanations
+    </p>
+  </div>
+
+  <ion-list reorder="true" (ionItemReorder)="reorderItems($event)">
+
+    <ion-item-sliding #slidingItem *ngFor="let routine of routines; let i = index;"
+      (click)="goRoutineDetails(routine)" detail-push>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="assets/img/thumbs/{{routine.image}}">
+        </ion-thumbnail>
+        <h2>{{i+1}}. {{routine.name}}</h2>
+        <p>{{routine.state}}</p>
+      </ion-item>
+
+      <ion-item-options side="right" (ionSwipe)="removeRoutine(slidingItem, routine)">
+
+        <button ion-button icon-only (click)="editRoutine(slidingItem, routine)" color="secondary">
+          <ion-icon name="create"></ion-icon>
+        </button>
+
+        <button ion-button icon-only expandable color="danger" (click)="removeRoutine(slidingItem, routine)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

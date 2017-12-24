@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Edit Routine</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="addEditRoutine">
+  <ion-card>
+    <ion-card-header>
+        Routine Details
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label>
+          Name
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          Description
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="description"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <img *ngIf="imageURL" [src]="imageURL"  [(ngModel)]="picture"/>
+        Picture
+        <button ion-button outline item-end icon-left (click)="takePhoto()">
+          <ion-icon name="image"></ion-icon>
+          Load
+        </button>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+        Routine Activities
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-searchbar [(ngModel)]="searchActivityQuery" (ionInput)="getActivities($event)" (ionClear)="resetList($event)">
+      </ion-searchbar>
+
+      <ion-list>
+        <ion-item *ngFor="let activity of activities; let i = index">
+        <!--ion-checkbox color="dark" (ionChange)="updateCheckedActivities(activity, $event.target.checked)"></ion-checkbox-->
+            <input type="checkbox" (change)="updateCheckedActivities(activity, $event.target.checked)">
+
+            <ion-thumbnail item-start>
+              <img src="assets/img/thumbs/{{activity.image}}">
+            </ion-thumbnail>
+            <h2>{{activity.name}}</h2>
+            <p>{{activity.desc}}</p>
+            <button ion-button clear item-end>View</button>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <button ion-button color="stable" block (click)="saveRoutine()">
+    Save Routine
+  </button>
+
+</ion-content>

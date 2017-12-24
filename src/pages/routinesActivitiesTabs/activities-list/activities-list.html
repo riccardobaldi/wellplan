@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{routineInfo.name}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-left (click)="editRoutine()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <img src="assets/img/headers/{{routineInfo.image}}">
+    <h1 padding>{{routineInfo.name}}</h1>
+    <ion-card>
+        <ion-card-header>
+            Routine Details
+        </ion-card-header>
+        <ion-card-content>
+            {{routineInfo.data}}
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+          Routine Activities
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item *ngFor="let activity of activities">
+            <ion-checkbox color="dark"></ion-checkbox>
+            <ion-thumbnail item-left>
+              <img src="assets/img/thumbs/{{activity.image}}">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{activity.name}}</h2>
+              <p>{{activity.desc}}</p>
+            </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

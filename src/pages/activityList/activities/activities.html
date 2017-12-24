@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Activities</ion-title>
+
+  </ion-navbar>
+
+  <ion-toolbar>
+    <!--[(ngModel)] for two-way data binding: [] for getter, () for getter -->
+
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredActivities()" (ionClear)="resetList()">
+    <!--ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredActivities()"-->
+    <!--ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()" (ionClear)="resetList()"-->
+    </ion-searchbar>
+
+    <!--div *ngIf="searching" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div-->
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <!--ion-list [virtualScroll]="activityService.activities" [headerFn]="customHeaderFn">
+    <ion-item-divider *virtualHeader="let header">{{ header }}</ion-item-divider-->
+
+    <!--ion-item *ngFor="let activity of activityService.activities" (tap)="goToActivity(activity)"
+    (press)="selectActivity(activity)" [ngClass]="{'selected-activity': selectedActivity === activity}"-->
+
+    <!--ion-item *virtualItem="let activity" (click)="goActivityDetails(activity)" detail-push>
+            <ion-thumbnail item-left>
+              <img src="assets/img/thumbs/{{activity.image1}}">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{activity.name}}</h2>
+              <p>{{activity.description}}</p>
+              <p>{{activity.category}}</p>
+            </ion-label>
+
+        </ion-item>
+    </ion-list-->
+
+  <ion-list>
+    <ion-item *ngFor="let activity of items">
+      <ion-thumbnail item-start>
+        <img src="assets/img/thumbs/{{activity.image1}}">
+      </ion-thumbnail>
+      <h2>{{activity.name}}</h2>
+      <p>{{activity.description}}</p>
+      <p>{{activity.category}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

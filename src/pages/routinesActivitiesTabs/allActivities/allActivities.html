@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Activities</ion-title>
+
+  </ion-navbar>
+
+  <ion-toolbar>
+    <!--[(ngModel)] for two-way data binding: [] for getter, () for getter -->
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getActivities($event)" (ionClear)="resetList($event)">
+    </ion-searchbar>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <!-- Virtual Scrolling: per migliorare la performance solo la parte degli item visibili viene renderizzata con supporto a Header -->
+<ion-list [virtualScroll]="activities" [headerFn]="customHeaderFn">
+  <ion-item-divider *virtualHeader="let header">{{ header }}</ion-item-divider>
+
+  <ion-item *virtualItem="let activity" (click)="goActivityDetails(activity)" detail-push>
+          <ion-thumbnail item-left>
+            <img src="assets/img/thumbs/{{activity.image}}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{activity.name}}</h2>
+            <p>{{activity.desc}}</p>
+          </ion-label>
+
+      </ion-item>
+  </ion-list>
+
+</ion-content>

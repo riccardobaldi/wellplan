@@ -1,0 +1,75 @@
+[
+    {
+        "id": 0,
+        "name": "Wake Up Routine",
+        "createDate": "February 26, 2017",
+        "image": "acadia.jpg",
+        "state": "Default",
+        "data": "From avoiding the snooze button to getting dressed with the lights on and doing some exercise, here are five ways to feel energised through the day. Getting a good night’s sleep is vital for health and happiness, improving our memory, mood and immune system. But did you know how you wake up is also important? That’s because when you wake up your body goes through certain changes to help you feel fresh for the upcoming day: your body temperature increases, your sleep becomes lighter and hormones, such as dopamine and cortisol, are released.",
+        "activities": [0,1,2,3,4]
+
+    },
+    {
+        "id": 1,
+        "name": "Morning Routine",
+        "createDate": "October 31, 2017",
+        "image": "americansamoa.jpg",
+        "state": "Default",
+        "data": "Description needed!",
+        "activities": [2,3,5,6]
+    },
+    {
+        "id": 2,
+        "name": "Mid-Day Routine",
+        "createDate": "December 2, 2017",
+        "image": "lakeclark.jpg",
+        "state": "Default",
+        "data": "Description needed!",
+        "activities": [3,4,7,8]
+    },
+    {
+        "id": 3,
+        "name": "Evening Routine",
+        "createDate": "August 9, 2017",
+        "image": "lassenvolcanic.jpg",
+        "state": "Default",
+        "data": "Description needed!",
+        "activities": [6,7,8]
+    },
+    {
+        "id": 4,
+        "name": "Bedtime Routine",
+        "createDate": "July 1, 2017",
+        "image": "mammothcave.jpg",
+        "state": "Default",
+        "data": "Description needed!",
+        "activities": [1,6]
+    },
+    {
+        "id": 5,
+        "name": "Custom Routine",
+        "createDate": "March 1, 2017",
+        "image": "yellowstone.jpg",
+        "state": "Chiara",
+        "data": "Description needed!",
+        "activities": [2,3,4,5,6]
+    },
+    {
+        "id": 6,
+        "name": "Custom Routine 2",
+        "createDate": "June 23, 2017",
+        "image": "yosemite.jpg",
+        "state": "Giovanna",
+        "data": "Description needed!",
+        "activities": [1,6,7,8]
+    },
+    {
+        "id": 7,
+        "name": "Routine Riccardo",
+        "createDate": "June 21, 2017",
+        "image": "yosemite.jpg",
+        "state": "Riccardo",
+        "data": "Description needed!",
+        "activities": [3,4,5,6,8]
+    }
+]

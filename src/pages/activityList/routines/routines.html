@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-buttons end *ngIf="selectedRoutine != null">
+      <button ion-button (click)="removeSelectedRoutine()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Routines</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let routine of routinesService.routines" (tap)="goToRoutine(routine)"
+    (press)="selectRoutine(routine)" [ngClass]="{'selected-routine': selectedRoutine === routine}">
+      <ion-thumbnail item-start>
+        <img src="assets/img/thumbs/{{routine.image}}">
+      </ion-thumbnail>
+      <h2>{{routine.name}}</h2>
+      <p>{{routine.description}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-fab bottom right>
+  <button ion-fab (click)="showAddRoutine()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>

@@ -1,0 +1,8 @@
+{
+  "name": "WellPlan",
+  "app_id": "c7bc9afd",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

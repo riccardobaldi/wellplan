@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page5">
+  <form id="login-form1">
+    <ion-list id="login-list2">
+      <ion-item id="login-input1">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="login-input2">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button id="login-button6" ion-button color="stable" block>
+      Log in
+    </button>
+    <button id="login-button7" ion-button clear color="positive" block href-inappbrowser="/signup">
+      Or create an account
+    </button>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Change profile</ion-label>
+        <ion-select>
+        <!--ion-select [(ngModel)]="profile"-->
+          <ion-option value="ric">Riccardo</ion-option>
+          <ion-option value="lor">Lorenzo</ion-option>
+          <ion-option value="gab">Gabriele</ion-option>
+          <ion-option value="lau">Laura</ion-option>
+        </ion-select>
+        <small>Up to 5 profiles</small>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
